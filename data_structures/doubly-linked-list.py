@@ -108,22 +108,49 @@ class DoublyLinkedList:
     
     # Insert value at selected index
     def insert(self, index, value):
+        # Return false when index is out of range
         if index < 0 or index > self.length:
             return False
+        # Use prepend method when index is 0
         if index == 0: 
             return self.prepend(value)
+        # Use append method when index is length of list
         if index == self.length:
             return self.append(value)
         new_node = Node(value)
+        # Assign variable value to selected index - 1
         before = self.get(index -1)
+        # Assign variable value to before + 1 (or selected index + 1)
         after = before.next 
+        # Point new node to before pointer
         new_node.prev = before
+        # Point new node to after pointer
         new_node.next = after 
+        # Assign new node 
         before.next = new_node
         after.prev = new_node
         self.length += 1
         return True 
-                    
+    
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0: 
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        # Assign variable to selected index (node to remove)
+        temp = self.get(index)
+        # Isolate temp variable 
+        temp.next.prev = temp.prev
+        temp.prev.next = temp.next
+        # Remove node 
+        temp.next = None
+        temp.prev = None 
+        self.length -= 1 
+        return temp 
+        
+        
 my_doubly_linked_list = DoublyLinkedList(1)
 
 my_doubly_linked_list.append(2)
@@ -137,6 +164,8 @@ my_doubly_linked_list.prepend(0)
 my_doubly_linked_list.pop_first()
 
 my_doubly_linked_list.insert(2, 3)
+
+my_doubly_linked_list.remove(2)
 
 # Change value of index 1 to 17
 # my_doubly_linked_list.set_value(1, 17)
