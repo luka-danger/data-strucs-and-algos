@@ -105,14 +105,38 @@ class DoublyLinkedList:
             temp.value = value
             return True 
         return False
-            
+    
+    # Insert value at selected index
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0: 
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        new_node = Node(value)
+        before = self.get(index -1)
+        after = before.next 
+        new_node.prev = before
+        new_node.next = after 
+        before.next = new_node
+        after.prev = new_node
+        self.length += 1
+        return True 
+                    
 my_doubly_linked_list = DoublyLinkedList(1)
+
 my_doubly_linked_list.append(2)
-my_doubly_linked_list.append(3)
 my_doubly_linked_list.append(4)
+my_doubly_linked_list.append(5)
+
 my_doubly_linked_list.pop()
+
 my_doubly_linked_list.prepend(0)
+
 my_doubly_linked_list.pop_first()
+
+my_doubly_linked_list.insert(2, 3)
 
 # Change value of index 1 to 17
 # my_doubly_linked_list.set_value(1, 17)
