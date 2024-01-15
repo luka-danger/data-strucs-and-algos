@@ -98,6 +98,13 @@ class DoublyLinkedList:
                 temp = temp.prev
         return temp #.value <-- Use when testing get()
 
+    # Set value of node in selected index
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp: 
+            temp.value = value
+            return True 
+        return False
             
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)
@@ -106,6 +113,9 @@ my_doubly_linked_list.append(4)
 my_doubly_linked_list.pop()
 my_doubly_linked_list.prepend(0)
 my_doubly_linked_list.pop_first()
+
+# Change value of index 1 to 17
+# my_doubly_linked_list.set_value(1, 17)
 
 # Use when testing get()
 # print(my_doubly_linked_list.get(1))
