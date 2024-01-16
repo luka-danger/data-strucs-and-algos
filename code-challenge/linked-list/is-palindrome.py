@@ -35,11 +35,20 @@ class DoublyLinkedList:
             return True 
         forward = self.head
         backward = self.tail 
+        # Traverse first half of list 
+        # Use floor division // for odd numbers 
         for _ in range(self.length // 2):
+            # Compare first and last value 
             if forward.value != backward.value:
                 return False
+            # Move node forward one step at time
             forward = forward.next
+            # Move node backward one step at time
             backward = backward.prev
+            # Continue iterating through list
+            # If gone through half of list w/o 
+            # non-matching value (from first if statement)
+            # Then list is a palindrome 
         return True 
 
 
