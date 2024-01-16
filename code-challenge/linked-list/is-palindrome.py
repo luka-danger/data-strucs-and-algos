@@ -30,8 +30,17 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    def is_palindrome():
-        
+    def is_palindrome(self):
+        if self.length <= 1:
+            return True 
+        forward = self.head
+        backward = self.tail 
+        for _ in range(self.length // 2):
+            if forward.value != backward.value:
+                return False
+            forward = forward.next
+            backward = backward.prev
+        return True 
 
 
 
