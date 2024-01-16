@@ -18,12 +18,16 @@ class Stack:
             temp = temp.next
 
     def push(self, value):
+        # Create new node
         new_node = Node(value)
         if self.height == 0: 
             self.top = new_node
         else: 
+            # Initialize top as next node
             new_node.next = self.top 
+            # Initailize top as new node
             self.top = new_node
+            # Increase height by 1
             self.height += 1 
 
 my_stack = Stack(4)
