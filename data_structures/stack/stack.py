@@ -30,6 +30,19 @@ class Stack:
             # Increase height by 1
             self.height += 1 
 
+    def pop(self):
+        if self.height == 0:
+            return None 
+        # Set variable to top
+        temp = self.top 
+        # Move top pointer to next node
+        self.top = self.top.next
+        # Remove top item from list 
+        temp.next = None 
+        # Decrement by 1 
+        self.height -= 1
+        return temp 
+
 my_stack = Stack(4)
 
 my_stack.push(3)
