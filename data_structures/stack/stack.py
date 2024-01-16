@@ -47,4 +47,7 @@ my_stack = Stack(4)
 
 my_stack.push(3)
 
+# Test pop method
+# my_stack.pop()
+
 my_stack.print_stack()
