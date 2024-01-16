@@ -16,7 +16,7 @@ class Queue:
             print(temp.value)
             temp = temp.next
     
-    # Add itme to end of queue (Getting in line) 
+    # Add item to end of queue (Getting in line) 
     def enqueue(self, value):
         # Create new node
         new_node = Node(value)
@@ -33,6 +33,7 @@ class Queue:
         # Increment length of list by 1 
         self.length += 1
 
+    # Remove item from list 
     def dequeue(self):
         if self.length == 0:
             return None 
@@ -54,6 +55,6 @@ my_queue = Queue(4)
 my_queue.enqueue(5)
 
 # Test dequeue 
-# my_queue.dequeue()
+my_queue.dequeue()
 
 my_queue.print_queue()
