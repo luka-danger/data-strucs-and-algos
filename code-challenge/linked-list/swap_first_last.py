@@ -32,7 +32,10 @@ class DoublyLinkedList:
     def swap_first_last(self):
         if self.length is None or self.head == self.tail:
             return None
-        self.head.value, self.tail.value = self.tail.value, self.head.value
+        before = self.head.value
+        after = self.tail.value 
+        self.tail.value = before
+        self.head.value = after 
 
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)
