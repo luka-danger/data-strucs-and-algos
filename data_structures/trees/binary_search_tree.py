@@ -35,7 +35,28 @@ class BinarySearchTree:
                     return True 
                 temp = temp.right 
 
-            
+    def contains(self, value):
+        if self.root is None:
+            return False 
+        # Initialize pointer variable 
+        temp = self.root 
+        # While temp is not none (still pointing to a node)
+        while temp: 
+            # If the value is less than parent node, go left
+            if value < temp.value:
+                # Move pointer down and to left 
+                temp = temp.left
+            # If the value is greater than parent node, go right
+            elif value > temp.value: 
+                # Move pointer down and to right
+                temp = temp.right 
+            # If value is found 
+            else: 
+                return True 
+        # If value is not found (break while loop)
+        return False 
+
+
 my_tree = BinarySearchTree(2)
 my_tree.insert(1)
 my_tree.insert(3)
