@@ -27,5 +27,13 @@ class Stack:
         else:
             return self.stack_list.pop()
 
-
+def is_balanced_parentheses(parentheses):
+    stack = Stack()
+    for p in parentheses:
+        if p == '(':
+            stack.push(p)
+        elif p == ')':
+            if stack.is_empty() or stack.pop() != '(':
+                return False 
+    return stack.is_empty()
 
