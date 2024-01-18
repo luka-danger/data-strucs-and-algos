@@ -29,11 +29,3 @@ class Stack:
 
 
 
-# WRITE IS_BALANCED_PARENTHESES FUNCTION HERE #
-#                                             #
-#    This is a separate function that is      #
-#    not a method within the Stack class.     #
-#    Indent all the way to the left.          #
-#                                             #
-###############################################
-
