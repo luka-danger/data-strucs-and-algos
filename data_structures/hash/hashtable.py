@@ -21,7 +21,7 @@ class HashTable:
             print(i, ": ", val)
 
     # Use hash method on key to create the address
-    def set_items(self, key, value):
+    def set_item(self, key, value):
         # Computer address
         index = self.__hash(key)
         # Initialize empty list at address
@@ -30,10 +30,22 @@ class HashTable:
         # Put key value Pair into empty address
         self.data_map[index].append([key, value])
 
+    def get_item(self, key):
+        index = self.__hash(key)
+        if self.data_map[index] is not None: 
+            for i in range(len(self.data_map[index])):
+                if self.data_map[index][i][0] == key: 
+                    return self.data_map[index][i][1]
+        return None 
+
+
+
 my_hash_table = HashTable()
 
-my_hash_table.set_items('bolts', 1400)
-my_hash_table.set_items('washers', 50)
-my_hash_table.set_items('lumber', 70)
+my_hash_table.set_item('bolts', 1400)
+my_hash_table.set_item('washers', 50)
+my_hash_table.set_item('lumber', 70)
+
+my_hash_table.get_item('bolts')
 
 my_hash_table.print_table()
