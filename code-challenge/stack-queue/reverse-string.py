@@ -28,13 +28,14 @@ class Stack:
             return self.stack_list.pop()
 
 
-def reverse_string(self):
-    self.stack_list = []
-    reversed_string = self.stack_list
-    temp = self.top 
-    while self.top.next:
-        reversed_string.append(self.length)
-    return reverse_string
+def reverse_string(string):
+    stack = Stack()
+    reversed_string = ''
+    for char in string: 
+        stack.push(char)
+    while not stack.is_empty(): 
+        reversed_string += stack.pop()
+    return reversed_string
     
     
 
