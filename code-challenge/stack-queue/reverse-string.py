@@ -29,11 +29,18 @@ class Stack:
 
 
 def reverse_string(string):
+    # Initialize new stack
     stack = Stack()
+    # Create empty string
     reversed_string = ''
+    # Iterate through each char in input string
     for char in string: 
+        # Push each char into stack 
         stack.push(char)
+    # Run loop while stack is not empty
     while not stack.is_empty(): 
+        # Pop last char from stack and add to first index of string
+        # Repeat at next index with next char until stack is empty 
         reversed_string += stack.pop()
     return reversed_string
     
