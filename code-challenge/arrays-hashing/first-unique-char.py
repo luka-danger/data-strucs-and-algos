@@ -21,3 +21,7 @@ print(firstUniqueChar(myString2))
 # Should return -1
 myString3 = "aabb"
 print(firstUniqueChar(myString3))
+
+# Run Time: O(n) 
+
+# Space: 
