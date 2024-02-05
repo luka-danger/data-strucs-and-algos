@@ -19,3 +19,9 @@ print(containsDuplicate(myArray))
 # Return True
 myOtherArray = [5, 6, 7, 5]
 print(containsDuplicate(myOtherArray)) 
+
+# Run Time: O(n)
+# Solution iterates through array n times
+
+# Space: O(n)
+# Hashset memory could go up to size of array
