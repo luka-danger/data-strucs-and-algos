@@ -10,7 +10,7 @@ function bubbleSort(numbers) {
                 temp = numbers[j]
                 // Move element 1 to the next index (where element 2 was)
                 numbers[j] = numbers[j+1]
-                // Move element 2 to temp index (initial index of element 1)
+                // Move element 2 to temp index (initial index of element)
                 numbers[j+1] = temp 
             }
         }
