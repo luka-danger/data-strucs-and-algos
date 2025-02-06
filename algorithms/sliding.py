@@ -8,3 +8,4 @@ def sum_is_twenty(array, sub):
 
 my_array = [7, 12, 8, 11, 9]
 print(sum_is_twenty(my_array, 2))
+
